@@ -4,11 +4,11 @@ from distutils.core import setup
 
 setup(name              = "tropo-webapi-python",
       version           = "0.1.2",
-      url               = "http://github.com/tropo/tropo-webapi-python",
+      url               = "http://github.com/developergarden/tropo-webapi-python",
       maintainer        = "Voxeo Corp.",
       maintainer_email  = "support@tropo.com",
-      description       = "Python library for building voice/SMS/IM/Twitter apps at Tropo.com",
-      long_description  = "This module implements a set of classes and methods for manipulating the Web API for the Tropo cloud communications service at http://www.tropo.com/",
+      description       = "Python library for building voice/SMS/IM/Twitter apps at developergarden.com",
+      long_description  = "This module implements a set of classes and methods for manipulating the Web API for the Tropo cloud communications service at http://www.developergarden.com/",
       platforms         = ["Platform Independent"],
       license           = "MIT",
       classifiers       = [
