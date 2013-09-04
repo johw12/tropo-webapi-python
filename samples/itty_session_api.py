@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Hello world script for Session API ( https://www.tropo.com/docs/webapi/sessionapi.htm )
+Hello world script for Session API ( https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/session.html)
 
 Upon launch, it will trigger a message to be sent via Jabber to the addess specified in
 'number'.
