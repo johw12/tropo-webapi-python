@@ -411,10 +411,11 @@ class StartRecording(TropoAction):
         "password": String, 
         "transcriptionID": String
         "transcriptionEmailFormat":String
-        "transcriptionOutURI": String} }
+        "transcriptionOutURI": String
+        "transcriptionLanguage": String} }
     """
     action = 'startRecording'
-    options_array = ['format', 'method', 'username', 'password', 'transcriptionID', 'transcriptionEmailFormat', 'transcriptionOutURI']
+    options_array = ['format', 'method', 'username', 'password', 'transcriptionID', 'transcriptionEmailFormat', 'transcriptionOutURI', 'transcriptionLanguage']
 
     def __init__(self, url, **options):
         self._dict = {'url': url}
