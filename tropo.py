@@ -109,7 +109,7 @@ class Call(TropoAction):
     """
     Class representing the "call" Tropo action. Builds a "call" JSON object.
     Class constructor arg: to, a String
-    Class constructor options: answerOnMedia, channel, from, headers, name, network, recording, required, timeout
+    Class constructor options: answerOnMedia, channel, from, headers, name, network, recording, required, timeout, machineDetection
     Convenience function: Tropo.call()
 
     (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/call.html)
@@ -125,10 +125,11 @@ class Call(TropoAction):
         "network": String,
         "recording": Array or Object,
         "required": Boolean,
-        "timeout": Float } }
+        "timeout": Float.
+        "machineDetection: Boolean or Object" } }
     """
     action = 'call'
-    options_array = ['answerOnMedia', 'allowSignals', 'channel', '_from', 'headers', 'name', 'network', 'recording', 'required', 'timeout']
+    options_array = ['answerOnMedia', 'allowSignals', 'channel', '_from', 'headers', 'name', 'network', 'recording', 'required', 'timeout', 'machineDetection']
 
     def __init__(self, to, **options):
         self._dict = {'to': to}
@@ -174,10 +175,12 @@ class Conference(TropoAction):
         "name": String,
         "playTones": Boolean,
         "required": Boolean,
-        "terminator": String } }
+        "terminator": String,
+        "joinPrompt": Object,
+        "leavePrompt": Object } }
     """
     action = 'conference'
-    options_array = ['allowSignals', 'interdigitTimeout', 'mute', 'name', 'playTones', 'required', 'terminator']
+    options_array = ['allowSignals', 'interdigitTimeout', 'mute', 'name', 'playTones', 'required', 'terminator', 'joinPrompt', 'leavePrompt']
 
     def __init__(self, id, **options):
         self._dict = {'id': id}
@@ -200,7 +203,55 @@ class Hangup(TropoAction):
 
     def __init__(self):
         self._dict = {}
+        
+class JoinPrompt(TropoAction):
+  """
+  Class representing join prompts for the conference method. Builds a "joinPrompt" JSON object.
+  Class constructor options: value, voice
 
+  (See https://www.tropo.com/docs/webapi/conference.htm)
+  """
+  action = 'joinPrompt'
+  options_array = ['value', 'voice']
+
+  def __init__(self, value, **options):
+    self._dict = {'value': value}
+    for opt in self.options_array:
+      if opt in options:
+        self._dict[opt] = options[opt]
+
+class LeavePrompt(TropoAction):
+  """
+  Class representing leave prompts for the conference method. Builds a "leavePrompt" JSON object.
+  Class constructor options: value, voice
+
+  (See https://www.tropo.com/docs/webapi/conference.htm)
+  """
+  action = 'leavePrompt'
+  options_array = ['value', 'voice']
+
+  def __init__(self, value, **options):
+    self._dict = {'value': value}
+    for opt in self.options_array:
+      if opt in options:
+        self._dict[opt] = options[opt]
+                
+class MachineDetection(TropoAction):
+  """
+  Class representing machine detection for the call method. Builds a "machineDetection" JSON object.
+  Class constructor options: introduction, voice
+
+  (See https://www.tropo.com/docs/webapi/call.htm)
+  """
+  action = 'machineDetection'
+  options_array = ['introduction', 'voice']
+
+  def __init__(self, introduction, **options):
+    self._dict = {'introduction': introduction}
+    for opt in self.options_array:
+      if opt in options:
+        self._dict[opt] = options[opt]
+        
 class Message(TropoAction):
     """
     Class representing the "message" Tropo action. Builds a "message" JSON object.
@@ -253,10 +304,10 @@ class On(TropoAction):
         "voice": String } }
     """
     action = 'on'
-    options_array = ['name','next','required','say', 'voice']
+    options_array = ['name','next','required','say', 'voice', 'ask', 'message', 'wait']
 
     def __init__(self, event, **options):
-        self._dict = {'event': event}
+        self._dict = {}
         for opt in self.options_array:
             if opt in options:
                 if ((opt == 'say') and (isinstance(options['say'], basestring))):
@@ -264,8 +315,26 @@ class On(TropoAction):
                       self._dict['say'] = Say(options['say'], voice=options['voice']).json
                     else:
                       self._dict['say'] = Say(options['say']).json
+             
+                elif ((opt == 'ask') and (isinstance(options['ask'], basestring))):
+                  if('voice' in options):
+                    self._dict['ask'] = Ask(options['ask'], voice=options['voice']).json
+                  else:
+                    self._dict['ask'] = Ask(options['ask']).json
+              
+                elif ((opt == 'message') and (isinstance(options['message'], basestring))):
+                  if('voice' in options):
+                    self._dict['message'] = Message(options['message'], voice=options['voice']).json
+                  else:
+                    self._dict['message'] = Message(options['message']).json
+                
+                elif ((opt == 'wait') and (isinstance(options['wait'], basestring))):
+                  self._dict['wait'] = Wait(options['wait']).json
+                  
                 elif(opt != 'voice'):
                     self._dict[opt] = options[opt]
+                    
+        self._dict['event'] = event
 
 class Record(TropoAction):
     """
@@ -457,22 +526,51 @@ class Transfer(TropoAction):
         "name": String,
         "required": Boolean,
         "terminator": String,
-        "timeout": Float } }
+        "timeout": Float,
+        "machineDetection": Boolean or Object } }
     """
     action = 'transfer'
-    options_array = ['answerOnMedia', 'choices', '_from', 'name', 'on', 'required', 'allowSignals', 'headers', 'interdigitTimeout', 'ringRepeat', 'timeout']
+    options_array = ['answerOnMedia', 'choices', '_from', 'name', 'on', 'required', 'allowSignals', 'headers', 'interdigitTimeout', 'ringRepeat', 'timeout', 'machineDetection']
 
     def __init__(self, to, **options):
-        self._dict = {'to': to}
-        for opt in self.options_array:
-            if opt in options:
-                if (opt == '_from'):
-                    self._dict['from'] = options['_from']
-                elif(opt == 'choices'):
-                    self._dict['choices'] = options['choices']
-                else:
-                    self._dict[opt] = options[opt]
-                    
+      self._dict = {'to': to}
+      for opt in self.options_array:
+        if opt in options:
+          whisper = []
+          for key, val in options['on'].iteritems():
+            newDict = {}
+
+            if(key == "ask"):
+              newDict['ask'] = val
+              newDict['event'] = 'connect'
+
+            elif(key == "say"):
+              newDict['say'] = val
+              newDict['event'] = 'connect'
+
+            elif(key == "wait"):
+              newDict['wait'] = val
+              newDict['event'] = 'connect'
+
+            elif(key == "message"):
+              newDict['message'] = val
+              newDict['event'] = 'connect'
+            
+            elif(key == "ring"):
+              newDict['say'] = val
+              newDict['event'] = 'ring'
+
+              
+            whisper.append(newDict)
+
+          self._dict['on'] = whisper
+          if (opt == '_from'):
+            self._dict['from'] = options['_from']
+          elif(opt == 'choices'):
+            self._dict['choices'] = options['choices']
+          elif(opt != 'on'):
+              self._dict[opt] = options[opt]
+
 class Wait(TropoAction):
       """
       Class representing the "wait" Tropo action. Builds a "wait" JSON object.
@@ -499,7 +597,7 @@ class Result(object):
     """
     Returned anytime a request is made to the Tropo Web API.
     Method: getValue
-    (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/result.html)
+    (See https://www.tropo.com/docs/webapi/result.htm)
 
         { "result": {
             "actions": Array or Object,
@@ -510,7 +608,7 @@ class Result(object):
             "sessionId": String,
             "state": String } }
     """
-    options_array = ['actions','complete','error','sequence', 'sessionDuration', 'sessionId', 'state']
+    options_array = ['actions','complete','error','sequence', 'sessionDuration', 'sessionId', 'state', 'userType', 'connectedDuration', 'duration', 'calledID']
 
     def __init__(self, result_json):
         result_data = jsonlib.loads(result_json)
@@ -532,6 +630,14 @@ class Result(object):
             dict = actions
         # return dict['value'] Fixes issue 17
         return dict['value']
+
+
+    def getUserType(self):
+      """
+      Get the userType of the previously POSTed Tropo action.
+      """
+      userType = self._userType
+      return userType
 
 # # **Tue May 17 07:17:38 2011** -- egilchri
 
