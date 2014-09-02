@@ -5,7 +5,7 @@ from tropo import Choices, MachineDetection, JoinPrompt, LeavePrompt, On, Ask, S
 t = Tropo()
 
 #CPA
-mc = MachineDetection(introduction="THis is a CPA test", voice="Victor").json
+mc = MachineDetection(introduction="THis is a CPA test", voice="Kate").json
 t.call("+14071234321", machineDetection=mc)
 
 #CPA with Boolean value which will detect CPA with 30 seconds of silence. 
@@ -13,8 +13,8 @@ t.call("+14071234321", machineDetection=True)
 
 
 #Conference with join/leave prompts
-jp = JoinPrompt(value="Someone just joined the conference", voice="Victor").json
-lp = LeavePrompt(value="Someone just left the conference", voice="Victor").json
+jp = JoinPrompt(value="Someone just joined the conference", voice="Kate").json
+lp = LeavePrompt(value="Someone just left the conference", voice="Kate").json
 t.conference(id="1234", joinPrompt=jp, leavePrompt=lp)
 
 

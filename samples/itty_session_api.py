@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Hello world script for Session API ( https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/session.html)
+Hello world script for Session API (https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/start_session.html)
 
 Upon launch, it will trigger a message to be sent via Jabber to the addess specified in
 'number'.
@@ -23,7 +23,7 @@ def index(request):
     return t.RenderJson()
 
 
-base_url = 'http://api.tropo.com/1.0/sessions'
+base_url = 'https://tropo.developergarden.com/api/sessions'
 token = 'xxxxxxxxxx'		# Insert your token here
 action = 'create'
 number = 'username@domain'	# change to the Jabber ID to which you want to send the message
