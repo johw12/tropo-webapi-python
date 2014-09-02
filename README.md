@@ -5,7 +5,7 @@ Web API for the Tropo cloud communications service at http://www.developergarden
 
 For more information about the Tropo Web API that is used with this module, please see:
 
-    https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/webapi.html
+    https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/webapi.html
 
 As this python module is still in development, please report any bugs or issues by raising an issue here:
 
@@ -92,7 +92,7 @@ Run testsuite by issuing:
      |  Class constructor options: attempts, bargein, choices, minConfidence, name, recognizer, required, say, timeout, voice
      |  
      |  Request information from the caller and wait for a response.
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/ask.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/ask.html)
      |  
      |      { "ask": {
      |          "attempts": Integer,
@@ -116,7 +116,7 @@ Run testsuite by issuing:
      |  Class constructor options: answerOnMedia, channel, _from, headers, name, network, recording, required, timeout
      |  Convenience function: Tropo.call()
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/call.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/call.html)
      |  
      |  { "call": {
      |      "to": String or Array,#Required
@@ -138,7 +138,7 @@ Run testsuite by issuing:
      |  Class representing choice made by a user. Builds a "choices" JSON object.
      |  Class constructor options: terminator, mode
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/ask.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/ask.html)
      |  
      |  Methods defined here:
      |  
@@ -150,7 +150,7 @@ Run testsuite by issuing:
      |  Convenience function: Tropo.conference()
      |  Class constructor options: mute, name, playTones, required, terminator
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/conference.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/conference.html)
      |  
      |  { "conference": {
      |      "id": String,#Required
@@ -170,7 +170,7 @@ Run testsuite by issuing:
      |  Class constructor options: 
      |  Convenience function: Tropo.hangup()
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/hangup.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/hangup.html)
      |  
      |  { "hangup": { } }
      |  
@@ -185,7 +185,7 @@ Run testsuite by issuing:
      |  Class constructor options: answerOnMedia, channel, _from, name, network, required, timeout, voice
      |  Convenience function: Tropo.message()
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/message.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/message.html)
      |  { "message": {
      |          "say": Object,#Required
      |          "to": String or Array,#Required
@@ -208,7 +208,7 @@ Run testsuite by issuing:
      |  Class constructor options:  name,next,required,say
      |  Convenience function: Tropo.on()
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/on.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/on.html)
      |  
      |  { "on": {
      |      "event": String,#Required
@@ -229,7 +229,7 @@ Run testsuite by issuing:
      |  
      |  
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/record.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/record.html)
      |  
      |      { "record": {
      |          "attempts": Integer,
@@ -260,7 +260,7 @@ Run testsuite by issuing:
      |  Class constructor options:  name, required
      |  Convenience function: Tropo.redirect()
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/redirect.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/redirect.html)
      |  
      |  { "redirect": {
      |      "to": Object,#Required
@@ -277,7 +277,7 @@ Run testsuite by issuing:
      |  Class constructor options: 
      |  Convenience function: Tropo.reject()
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/reject.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/reject.html)
      |  
      |  { "reject": { } }
      |  
@@ -288,7 +288,7 @@ Run testsuite by issuing:
     class Result
      |  Returned anytime a request is made to the Tropo Web API. 
      |  Method: getValue 
-     |  (See hhttps://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/result.html)
+     |  (See hhttps://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/result.html)
      |  
      |      { "result": {
      |          "actions": Array or Object,
@@ -312,7 +312,7 @@ Run testsuite by issuing:
      |  Class constructor options: attempts, bargein, choices, minConfidence, name, recognizer, required, say, timeout, voice, _as
      |  Convenience function: Tropo.say()
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/say.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/say.html)
      |  
      |  { "say": {
      |      "as": String,
@@ -327,7 +327,7 @@ Run testsuite by issuing:
     
     class Session
      |  Session is the payload sent as an HTTP POST to your web application when a new session arrives. 
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/session.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/session.html)
      |
      | Because 'from' is a reserved word in Python, the session object's 'from' property is called
      | fromaddress in the Python library
@@ -342,7 +342,7 @@ Run testsuite by issuing:
      |  Class constructor options: format, method, username, password
      |  Convenience function: Tropo.startRecording()
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/startrecording.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/startrecording.html)
      |  
      |  { "startRecording": {
      |      "format": String,
@@ -361,7 +361,7 @@ Run testsuite by issuing:
      |   Class constructor options:
      |   Convenience function: Tropo.stopRecording()
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/stoprecording.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/stoprecording.html)
      |     { "stopRecording": { } }
      |  
      |  Methods defined here:
@@ -598,7 +598,7 @@ Run testsuite by issuing:
      |  Class constructor options: answerOnMedia, choices, _from, name, required, terminator
      |  Convenience function: Tropo.transfer()
      |  
-     |  (See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/transfer.html)
+     |  (See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/transfer.html)
      |  { "transfer": {
      |      "to": String or Array,#Required
      |      "answerOnMedia": Boolean,
@@ -622,7 +622,7 @@ Run testsuite by issuing:
      |  arguments expressed as key=value pairs.
      |  
      |  The optional arguments for these methods are described here:
-     |  https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/webapi.html
+     |  https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/webapi.html
      |  
      |  Methods defined here:
      |  
@@ -637,25 +637,25 @@ Run testsuite by issuing:
      |  ask(self, choices, **options)
      |      Sends a prompt to the user and optionally waits for a response.
      |      Arguments: "choices" is a Choices object
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/ask.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/ask.html
      |  
      |  call(self, to, **options)
      |      Places a call or sends an an IM, Twitter, or SMS message. To start a call, use the Session API to tell Tropo to launch your code. 
      |      
      |      Arguments: to is a String.
      |      Argument: **options is a set of optional keyword arguments. Use "_from" instead of "from".
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/call.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/call.html
      |  
      |  conference(self, id, **options)
      |      This object allows multiple lines in separate sessions to be conferenced together so that the parties on each line can talk to each other simultaneously. 
      |      This is a voice channel only feature. 
      |      Argument: "id" is a String
      |      Argument: **options is a set of optional keyword arguments.
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/conference.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/conference.html
      |  
      |  hangup(self)
      |      This method instructs Tropo to "hang-up" or disconnect the session associated with the current session.
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/hangup.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/hangup.html
      |  
      |  message(self, say_obj, to, **options)
      |      A shortcut method to create a session, say something, and hang up, all in one step. This is particularly useful for sending out a quick SMS or IM. 
@@ -663,49 +663,49 @@ Run testsuite by issuing:
      |      Argument: "say_obj" is a Say object
      |      Argument: "to" is a String
      |      Argument: **options is a set of optional keyword arguments. Use "_from" instead of "from".
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/message.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/message.html
      |  
      |  on(self, event, **options)
      |      Adds an event callback so that your application may be notified when a particular event occurs. 
      |      Possible events are: "continue", "error", "incomplete" and "hangup". 
      |      Argument: event is an event
      |      Argument: **options is a set of optional keyword arguments.
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/on.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/on.html
      |  
      |  record(self, **options)
      |      Plays a prompt (audio file or text to speech) and optionally waits for a response from the caller that is recorded. 
      |      Argument: **options is a set of optional keyword arguments.
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/record.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/record.html
      |  
      |  redirect(self, id, **options)
      |      Forwards an incoming call to another destination / phone number before answering it. 
      |      Argument: id is a String
      |      Argument: **options is a set of optional keyword arguments.
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/redirect.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/redirect.html
      |  
      |  reject(self)
      |      Allows Tropo applications to reject incoming sessions before they are answered. 
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/reject.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/reject.html
      |  
      |  say(self, message, **options)
      |      When the current session is a voice channel this key will either play a message or an audio file from a URL. 
      |      In the case of an text channel it will send the text back to the user via i nstant messaging or SMS. 
      |      Argument: message is a string
      |      Argument: **options is a set of optional keyword arguments. Use "_as" instead of "as".
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/say.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/say.html
      |  
      |  startRecording(self, url, **options)
      |      Allows Tropo applications to begin recording the current session. 
      |      Argument: url is a string
      |      Argument: **options is a set of optional keyword arguments.
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/startrecording.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/startrecording.html
      |  
      |  stopRecording(self)
      |      Stops a previously started recording.
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/stoprecording.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/stoprecording.html
      |  
      |  transfer(self, to, **options)
      |      Transfers an already answered call to another destination / phone number. 
      |      Argument: to is a string
      |      Argument: **options is a set of optional keyword arguments. Use "_from" instead of "from".
-     |      See https://www.developergarden.com/fileadmin/microsites/ApiProject/Dokumente/Dokumentation/Api_Doc_5_0/telekom-tropo-2.1/html/transfer.html
+     |      See https://www.developergarden.com/apis/documentation/api/telekom-tropo-documentation/html/transfer.html
